@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">API Calls</string>
+    <string name="email_address">Email Address</string>
+    <string name="user_password">Password</string>
+    <string name="user_name">Name</string>
+    <string name="login_text">Login</string>
+    <string name="register_text">Register</string>
+</resources>
