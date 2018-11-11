@@ -108,14 +108,15 @@ public class RegisterActivity extends AppCompatActivity {
         }
         @Override
         protected String doInBackground(Void... params) {
-//            TextView textview= (TextView) findViewById(R.id.textView);
-//            textview.setText("jsondata");
+//
             return getServerResponse(jsondata);
 //            return null;
         }
         @Override
         protected void onPostExecute(String result) {
             Toast.makeText(RegisterActivity.this, "Ab karle jo krna h..."+result, Toast.LENGTH_SHORT).show();
+            TextView textview= (TextView) findViewById(R.id.textView);
+            textview.setText(result);
         }
 
 
@@ -142,10 +143,15 @@ public class RegisterActivity extends AppCompatActivity {
 //        textview.setText(jsondata);
         try {
             TextView textview= (TextView) findViewById(R.id.textView);
-            URL url= new URL("http://codepenters.cloud/testapi/api/register");
+            URL url= new URL("http://testapi.codepenters.cloud/api/register");
             connection =(HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
-            connection.setRequestProperty("Accept","application/json");
+            connection.setDoInput (true);
+            connection.setDoOutput (true);
+            connection.setUseCaches (false);
+            connection.setRequestProperty("Content-Type","application/json");
+//            connection.setRequestProperty("Accept","application/json");
+
 //            connection.setDoInput(true);
             connection.connect();
 
