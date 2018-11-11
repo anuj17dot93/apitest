@@ -150,9 +150,7 @@ public class RegisterActivity extends AppCompatActivity {
             connection.setDoOutput (true);
             connection.setUseCaches (false);
             connection.setRequestProperty("Content-Type","application/json");
-//            connection.setRequestProperty("Accept","application/json");
 
-//            connection.setDoInput(true);
             connection.connect();
 
             DataOutputStream dStream=new DataOutputStream(connection.getOutputStream());
